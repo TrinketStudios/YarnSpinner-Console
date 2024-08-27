@@ -119,6 +119,9 @@ namespace YarnSpinnerConsole
                             case "node":
                                 writer.WriteColumn(line.nodeName);
                                 break;
+                            case "metadata":
+                                writer.WriteColumn(string.Join(" ", line.metadata.Where(md => !md.StartsWith("line:"))));
+                                break;
                             default:
                                 writer.WriteColumn(string.Empty);
                                 break;
